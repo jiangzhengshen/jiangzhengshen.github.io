@@ -33,7 +33,7 @@ Vue.use(getMarkdown, {
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  // mode: 'history',
+  mode: 'history',
   routes: routes
 })
 

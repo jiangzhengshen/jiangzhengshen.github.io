@@ -9,7 +9,7 @@ function listFiles(foldPath, results) {
         if (stat.isDirectory() == true) {
             listFiles(file, results);
         } else if (stat.isFile()) {
-            var content = fs.readFileSync(file, 'utf-8');
+            var content = JSON.parse(fs.readFileSync(file, 'utf-8')).content;
             var meta = content.match(/^---+\r\n([.\s\S]+)\r\n---+/);
             var meta_list = meta[1].split("\r\n");
 
@@ -34,6 +34,22 @@ function keysort(key) {
         return a[key] < b[key];
     }
 }
+
+function md2json(foldPath, outputDir) {
+    var files = fs.readdirSync(foldPath);
+    for (var i = 0; i < files.length; i++) {
+        var file = path.join(foldPath, files[i]);
+        var stat = fs.statSync(file);
+        if (stat.isDirectory() == true) {
+            md2json(file, outputDir);
+        } else if (stat.isFile()) {
+            var content = fs.readFileSync(file, 'utf-8');
+            fs.writeFileSync(path.join(outputDir, files[i].split('.')[0] + '.json'), JSON.stringify({ "content": content }));
+        }
+    }
+}
+
+md2json('./_post/', './static/post/');
 
 var results = [];
 listFiles('./static/post/', results);

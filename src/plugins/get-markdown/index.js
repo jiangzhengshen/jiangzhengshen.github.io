@@ -5,14 +5,14 @@ export default {
   install(Vue, { endpoint = '' }) {
     Vue.prototype.$getMarkdown = function (id) {
       // get fetch path and response resolver/mapper
-      let path = `/post/${id}.md`
+      let path = `/post/${id}.json`
       let uri = endpoint + path
 
       // fetch, parse and cache resource then pass to resolver
       return fetch(uri)
-        .then(res => res.text())
+        .then(res => res.json())
         .then(data => {
-          let dataJson = matter(data);
+          let dataJson = matter(data.content);
           this.$set(this.$data, 'content', dataJson.content);
           this.$set(this.$data, 'title', dataJson.data.title);
           this.$set(this.$data, 'author', dataJson.data.author);
