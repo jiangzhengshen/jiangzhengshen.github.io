@@ -58,6 +58,8 @@ git subtree push --prefix dist origin master
   - 自动遍历&路由md文件：predev: node traverse.js
   - 标签可链接
   - 冻结header，不可滚动
+  - [md预生成html](https://github.com/markedjs/marked)，只需把md部分转为html，yaml部分不变，static下可以是json/html
+- 悬浮toc
 - tag功能
 - 添加about、联系方式、投稿
 - 代码片段页面
