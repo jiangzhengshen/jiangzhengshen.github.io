@@ -8,3 +8,6 @@ DeepFM对向量类特征，稀疏类特征支持较好，但对稠密连续数�
 GBDT+LR：Practical lessons from predicting clicks on ads at facebook；https://git.code.oa.com/AI_algorithm/xgboost_plus_lr
 
 Gradient Boosted Decision Tree Neural Network（https://arxiv.org/pdf/1910.09340）
+
+
+GBDT + FM/LR：https://zhuanlan.zhihu.com/p/31734283
