@@ -12,16 +12,20 @@
   - 源可能被墙；不可定制
 - 邮件方案
   - 方便；邮件css渲染受限
-  - [next] huginn：邮件提醒、机器人提醒
+  - [next] huginn：邮件提醒、机器人提醒；serverless
 - 服务端（RSS service） + REST API + 轻客户端
-  - [working] https://github.com/HenryQW/Awesome-TTRSS
-  - https://github.com/FreshRSS/FreshRSS
-  - https://github.com/nextcloud/news：js
-  - https://github.com/feedbin/feedbin：ruby
-  - https://github.com/swanson/stringer：ruby
-  - https://github.com/feedocean/rss2full：golang
-  - https://github.com/Athou/commafeed：java
-  - https://github.com/sismics/reader：java
+  - serverless；js；Fever API
+  - 支持fever：
+    - https://github.com/pietheinstrengholt/rssmonster；vue + express
+    - https://github.com/HenryQW/Awesome-TTRSS；fever plugin；php
+    - https://github.com/FreshRSS/FreshRSS；PHP
+    - https://github.com/swanson/stringer：ruby；界面美
+  - 可参考：
+    - https://github.com/bbrinx/newsfeed；react + express，个人
+    - https://github.com/feedocean/rss2full：golang
+  - 其他：
+    - https://github.com/nextcloud/news；独立API，有配合和开源app
+    - https://github.com/feedbin/feedbin：ruby；独立API
   - 自建海外服务器：列表容易丢，定期备份
   - 前端功能：
     - 源列表
@@ -35,4 +39,4 @@
     - irreader：非开源
     - [working] node/electron
   - android
-    - FeedMe：非开源
+    - FeedMe：https://github.com/seazon/FeedMe；非开源
