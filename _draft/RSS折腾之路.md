@@ -32,11 +32,15 @@
     - 文章预览列表
     - 摘要查看
     - 查看原文内置浏览器
-  - [working] 网页
+  - 网页
   - win
     - emacs：繁琐
     - vscode：界面受限
     - irreader：非开源
-    - [working] node/electron
+    - [working] electron
   - android
+    - react native
+    - hippy-react
+    - https://github.com/akervinen/fewer；kotlin
     - FeedMe：https://github.com/seazon/FeedMe；非开源
+    - Readably；非开源
