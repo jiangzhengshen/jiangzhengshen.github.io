@@ -23,13 +23,13 @@ GBDT的特性：
 1. mGBDT
   - 需要使用MultiGBDT，不能替换为普通的GBDT：无法输出向量，叶节点无法作为真值
   - 各层学习率等参数需要精细调整
-2. [next] GBDT2NN/DeepGBM
+2. GBDT2NN/DeepGBM
   - GBDT2NN使得GBDT输出的标量可以直接对输入求梯度
   - 缺点是每一棵树的训练都需要重新GBDT2NN，代价比较高
-3. [working] 直接拟合GBDT的残差，然后用新一棵树distill：不会过拟合的原因，一是线性模型，而是数据量小
+3. 直接拟合GBDT的残差，然后用新一棵树distill：不会过拟合的原因，一是线性模型，二是数据量小
   - 226-10-1结构预估ETA
   - 226-10-1结构预估残差，gbdt多轮重新训练
   - 226维精简到10个，10-10-1结构
   - 更改预估logSp/sp/eta和损失函数
   - GBDT每棵树distill残差预估模型
-4. [todo] 多分类GBDT，输出各类别概率
+4. 多分类GBDT，输出各类别概率
