@@ -19,12 +19,24 @@ https://github.com/chihming/awesome-network-embedding
 tensorflow分布式embedding如何实现？
 
 DGL：
-- [working] venus镜像：py36, tf1.15.5, cuda 10.0, dgl-cu92, torch==1.7.1+cu92, torchvision==0.8.2+cu92, torchaudio==0.7.2
+- DGLBACKEND=[BACKEND] python gcn.py
 - 测试demo
+
+选型
+- 图采样
+  - plato：支持超大图
+  - dgl：亿级
+- embedding
+  - 亿级 * 2维可能不需要分布式；dgl支持；plato暂不支持
+  - 自定义op：https://www.tensorflow.org/guide/create_op，是否比embedding_table紧凑，不好说
+  - 需要parameter server，https://www.infoq.cn/article/1tgrust6kf030tluq0pb；https://zhuanlan.zhihu.com/p/108464732
+- DGL：dmlc组织
+- ETA适合小图方案，因为大图方案只能存静态属性
+- link embedding适合大图方案，分布式
 
 ### 图算法
 PinSage
-[next] GraphSage：dgl，plato
+GraphSage
 GCN
 GAT
 
@@ -37,11 +49,13 @@ item2vec
 #### word embedding
 
 #### graph & network embedding
-[next] Line：dgl，plato
+Line
+- 一阶：转无向图，2维 & 5维
+- 二阶：有向图，太稀疏，大量link出度和入度均为1，自身emb和context emb会变成同一个，且不与其他link相邻，可能导致平凡解
 - https://github.com/snowkylin/line
+- https://github.com/VahidooX/LINE
+- https://github.com/FrederickGeek8/LINE
 - https://github.com/shenweichen/GraphEmbedding
-- 单机：https://github.com/tangjianpku/LINE
-- 单机：https://graphvite.io/docs/latest/install.html
 DeepWalk：社交网络随机游走服从幂律分布，与自然语言一致
 node2vec
 SDNE
