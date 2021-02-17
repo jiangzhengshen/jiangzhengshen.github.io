@@ -1,0 +1,46 @@
+
+源：
+- RSSHub
+- arxiv
+- [next] 自定义学术会议源：rsshub or huginn？
+
+源管理/聚合方案：
+- 客户端管理
+  - 源可能被墙；多端不同步
+  - 邮箱客户端：移动端不支持
+- 邮箱服务内建：RSS服务+客户端
+  - 源可能被墙；不可定制
+- 邮件方案
+  - 方便；邮件css渲染受限
+  - [next] huginn：邮件提醒、机器人提醒；serverless
+- 服务端（RSS service） + REST API + 轻客户端
+  - serverless；js；Fever API
+  - 支持fever：
+    - https://github.com/pietheinstrengholt/rssmonster；vue + express
+    - https://github.com/HenryQW/Awesome-TTRSS；fever plugin；php
+    - https://github.com/FreshRSS/FreshRSS；PHP
+    - https://github.com/swanson/stringer：ruby；界面美
+  - 可参考：
+    - https://github.com/bbrinx/newsfeed；react + express，个人
+    - https://github.com/feedocean/rss2full：golang
+  - 其他：
+    - https://github.com/nextcloud/news；独立API，有配合和开源app
+    - https://github.com/feedbin/feedbin：ruby；独立API
+  - 自建海外服务器：列表容易丢，定期备份
+  - 前端功能：
+    - 源列表
+    - 文章预览列表
+    - 摘要查看
+    - 查看原文内置浏览器
+  - 网页
+  - win
+    - emacs：繁琐
+    - vscode：界面受限
+    - irreader：非开源
+    - [working] electron
+  - android
+    - react native
+    - hippy-react
+    - https://github.com/akervinen/fewer；kotlin
+    - FeedMe：https://github.com/seazon/FeedMe；非开源
+    - Readably；非开源

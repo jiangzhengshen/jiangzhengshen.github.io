@@ -1,23 +1,55 @@
 <template>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <router-link class="navbar-brand" to="/">Blog</router-link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <router-link class="nav-item nav-link" to="/">Home
-                        <span class="sr-only">(current)</span>
-                    </router-link>
-                    <router-link class="nav-item nav-link" to="/about">About</router-link>
-                </div>
-            </div>
-        </nav>
-    </div>
+  <el-menu
+    default-active="1"
+    router
+    class="nav-menu-custom"
+    mode="horizontal"
+    background-color="#fafafa"
+    text-color="#000000"
+    active-text-color="#000000"
+  >
+    <li class="pull-left nav-menu-item-custom">Blog</li>
+
+    <el-menu-item index="1" :route="{ path: '/' }">Home</el-menu-item>
+    <el-menu-item index="2" :route="{ path: '/about' }">About</el-menu-item>
+
+    <li class="pull-right nav-menu-item-custom">
+      <i class="el-icon-s-data"></i>
+    </li>
+  </el-menu>
 </template>
 
 <script>
-export default { name: 'blog-header' }
+import { ElMenu, ElMenuItem } from "element-plus";
+export default {
+  name: "BlogHeader",
+  components: {
+    ElMenu,
+    ElMenuItem
+  }
+};
 </script>
+
+<style scoped lang="scss">
+.nav-menu-custom {
+  li {
+    font-weight: bold;
+    float: none;
+    display: inline-block;
+  }
+  .pull-left {
+    float: left;
+  }
+  .pull-right {
+    float: right;
+  }
+  .nav-menu-item-custom {
+    cursor: pointer;
+    line-height: 60px;
+    padding: 0 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+</style>
